@@ -25,7 +25,7 @@ public class KeywordsDetector {
             String sentence = sentences[i];
             String lowerCasedString = sentence.toLowerCase();
             for (int j = 0; j < keywords.length; j++){
-                String keyWord = keywords[j];
+                String keyWord = keywords[j].toLowerCase();
                 if (lowerCasedString.indexOf(keyWord)!=-1){
                     System.out.println(sentence);
                 }
