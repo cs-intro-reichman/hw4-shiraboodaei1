@@ -20,6 +20,7 @@ public class Primes {
         int numOfPrimes = 0;
         for (int i = 2; i < numArr.length; i++){
             if (!numArr[i]){
+                System.out.println(i);
                 numOfPrimes++;
             }
         } 
