@@ -8,19 +8,25 @@ public class Primes {
         // cross numbers that are multiples of p = 2
         int prime = 2;
         while (prime < Math.sqrt(n)) {
-            for (int nextPrime = prime + 1; nextPrime < n; nextPrime ++){
-                if (!numArr[nextPrime]){
-                    if (nextPrime % prime == 0){
-                        numArr[nextPrime] = true;
-                    }
-                } 
+            if (!numArr[prime]){
+                for (int nextPrime = prime + 1; nextPrime < n; nextPrime ++){
+                    if (!numArr[nextPrime]){
+                        if (nextPrime % prime == 0){
+                            numArr[nextPrime] = true;
+                        }
+                    } 
+            }   
             } prime ++; 
         }
-        for (int i = 0; i < numArr.length; i++){
+        int numOfPrimes = 0;
+        for (int i = 2; i < numArr.length; i++){
             if (!numArr[i]){
+                numOfPrimes++;
                 System.err.println(i);
             }
-        }
+        } 
+        int percent = (int)((double) numOfPrimes/n * 100);
+        System.out.println("There are " + numOfPrimes + " primes between 2 and " + n + " (" + percent + "% are primes)");
     }
     
 }
